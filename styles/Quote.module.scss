@@ -1,0 +1,64 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3%;
+  gap: 0.7rem;
+  width: min(45ch, 70%);
+  left: -50%;
+  z-index: 4;
+  min-height: 350px;
+  background-image: url("../public/assets/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: 80px top;
+
+  &__text {
+    font-weight: 300;
+    color: var(--primary-color);
+  }
+
+  &__text::before {
+    content: '" ';
+  }
+
+  &__text::after {
+    content: ' "';
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+
+  &__name {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__occupation {
+    color: var(--secondary-color);
+    font-size: 20px;
+    font-weight: 300;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .quote {
+    margin: 0;
+    width: 55%;
+    min-height: 500px;
+    background-position: 180px top;
+
+    &__text {
+      text-align: center;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+}
